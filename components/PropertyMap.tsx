@@ -1,0 +1,5 @@
+'use client'
+import {useEffect,useRef} from 'react'
+import maplibregl from 'maplibre-gl'
+import 'maplibre-gl/dist/maplibre-gl.css'
+export default function PropertyMap({listings}:{listings:any[]}){const ref=useRef<HTMLDivElement>(null);useEffect(()=>{if(!ref.current)return;const map=new maplibregl.Map({container:ref.current,style:'https://tiles.openfreemap.org/styles/liberty',center:[21.16,42.66],zoom:8});map.addControl(new maplibregl.NavigationControl(),'top-right');listings.filter(x=>x.latitude!=null&&x.longitude!=null).forEach(x=>{const popup=new maplibregl.Popup({offset:20}).setHTML(`<strong>${String(x.title||'Property').replace(/</g,'&lt;')}</strong><br/>€${Number(x.price||0).toLocaleString()}<br/><a href="/property/${encodeURIComponent(x.id)}">View property</a>`);new maplibregl.Marker().setLngLat([Number(x.longitude),Number(x.latitude)]).setPopup(popup).addTo(map)});return()=>map.remove()},[listings]);return <div ref={ref} style={{height:'100%',minHeight:420,borderRadius:18,overflow:'hidden'}}/>}
