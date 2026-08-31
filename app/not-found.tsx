@@ -1,0 +1,2 @@
+import Link from 'next/link'
+export default function NotFound(){return <main style={{minHeight:'70vh',display:'grid',placeItems:'center',padding:24,textAlign:'center'}}><div><h1>Property not found</h1><p>The page you requested does not exist or is no longer available.</p><Link href="/" style={{display:'inline-block',marginTop:16,padding:'11px 16px',borderRadius:10,background:'#126b55',color:'#fff',textDecoration:'none'}}>Back to Zikos</Link></div></main>}
