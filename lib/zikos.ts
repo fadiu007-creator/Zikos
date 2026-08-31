@@ -1,5 +1,28 @@
 import { getSupabase } from './supabase'
 
+export type ZikosListing = {
+  id: string
+  title: string
+  description?: string | null
+  listing_type: 'sale' | 'rent'
+  property_type: string
+  price: number
+  city: string
+  neighborhood?: string | null
+  address?: string | null
+  bedrooms?: number | null
+  bathrooms?: number | null
+  area_m2?: number | null
+  latitude?: number | null
+  longitude?: number | null
+  featured?: boolean | null
+  status?: string | null
+  owner_id?: string | null
+  created_at?: string
+  updated_at?: string
+  [key: string]: unknown
+}
+
 export async function getPublishedListings(filters?: { mode?: 'sale'|'rent'; city?: string; propertyType?: string; maxPrice?: number }) {
   const supabase = getSupabase()
   if (!supabase) return { data: [], error: new Error('Supabase environment variables are missing') }
