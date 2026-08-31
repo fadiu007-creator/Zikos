@@ -2,29 +2,38 @@
 
 ## MVP foundation
 - [x] Next.js app shell
-- [x] Responsive Zillow-inspired marketplace UI
+- [x] Responsive real-estate marketplace UI
 - [x] Buy / Rent switch
 - [x] City, type and max-price filtering
-- [x] Favorites UI state
-- [x] Property cards and map placeholder
-- [x] Supabase schema with RLS
-- [x] Environment variable contract
+- [x] Favorites UI + persistent favorites wiring
+- [x] Property cards and property detail route
+- [x] Supabase production schema with RLS
+- [x] Email/password authentication wiring
+- [x] Listing creation, editing, publishing and deletion wiring
+- [x] Listing photo upload wiring
+- [x] Messaging inbox and property inquiry wiring
+- [x] Viewing request workflow
+- [x] Admin moderation UI and admin RPC
+- [x] MapLibre property-map page
+- [x] GitHub Actions production build check
+- [x] Vercel production deployment
 
-## Production integrations
-- [ ] Connect Zikos to a dedicated Supabase project
-- [ ] Run `supabase/schema.sql`
-- [ ] Supabase Auth: email/password + OAuth
-- [ ] Persistent listings from database
-- [ ] Supabase Storage for listing photos
-- [ ] Persistent favorites
-- [ ] Owner/agent dashboard
-- [ ] Create/edit/publish listing flow
-- [ ] Property detail route `/property/[id]`
-- [ ] Realtime messaging
-- [ ] Viewing requests
-- [ ] Interactive map + geocoding
+## Production activation
+- [ ] Create/connect the dedicated Zikos Supabase project
+- [ ] Apply `supabase/schema.sql` to the Zikos Supabase project
+- [ ] Add Zikos Supabase URL + publishable key to Vercel Production
+- [ ] Verify Supabase Auth email settings and redirect URLs
+- [ ] Verify storage bucket and policies
+- [ ] Seed initial Kosovo listings for launch
+- [ ] Run authenticated end-to-end smoke test
+- [ ] Run Supabase security/performance advisor checks
+- [ ] Configure custom domain (optional)
+
+## Post-MVP
+- [ ] OAuth providers
 - [ ] Saved searches and alerts
-- [ ] Admin moderation
-- [ ] Production security/advisor checks
-- [ ] Vercel deployment + domain
-- [ ] End-to-end smoke test
+- [ ] Realtime messaging subscriptions
+- [ ] Geocoding/search autocomplete
+- [ ] Advanced map filters
+- [ ] Agent verification workflow
+- [ ] Analytics and moderation audit log
